@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar Responsive</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+
+        }
+
+        li {
+            padding: 10px 20px;
+            list-style-type: none;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .nav {
+            padding: 0px 15px;
+            background-color: rgb(243, 163, 13);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h1{
+            color: black;
+        }
+       
+
+        .parent {
+            position: relative;
+        }
+
+        .child {
+            background-color: black;
+            position: absolute;
+            left: 0;
+            top: 35px;
+            display: none;
+        }
+
+        .parent:hover .child {
+            display: block;
+        }
+
+        #hide {
+            display: none;
+        }
+
+        input {
+            display: none;
+        }
+        #show{
+            display: none;
+            color: black;
+        }
+
+
+        @media (max-width:650px) {
+            .menu {
+                display: none;
+            }
+
+            #hide {
+                display: block;
+            }
+
+    
+            input:checked ~ .menu{
+                text-align: center;
+                display: block;
+                background-color: black;
+                position: absolute;
+                top: 35px;
+                left: 0;
+                width: 100%;
+
+            }
+
+            input:checked ~ #hide{
+                display: none;
+            }
+            input:checked ~ #show{
+                display: block;
+            }
+           
+        
+            .child {
+                background-color: rgb(243, 163, 13);
+            left: 60%;
+            top: 25px;
+        }
+          
+        }
+         
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <div class="logo">
+            <h1>Logo</h1>
+        </div>
+        <div class="abc">
+            <input type="checkbox" id="same">
+            <label for="same" id="hide"><i class="fa-solid fa-bars"></i></label>
+
+            <label for="same" id="show"><i class="fa-solid fa-circle-xmark"></i></label>
+          
+
+            <ul class="menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li class="parent"><a href="">Services</a>
+
+
+                    <ul class="child">
+                        <li><a href="">Webdesign</a></li>
+                        <li><a href="">Freelancer</a></li>
+                        <li><a href="">Webdev</a></li>
+                        <li><a href="">Androiddev</a></li>
+                    </ul>
+
+                </li>
+
+                <li><a href="">Feedback</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
